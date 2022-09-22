@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-    <meta charset="UTF-8">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="">
+<html   xmlns="http://www.w3.org/1999/xhtml" 
+        xmlns:data-view="http://www.w3.org/2003/g/data-view#"
+        data-view:transformation="tranform.xsl"
+>
+
+<head>
     <link rel="meta" type="application/rdf+xml" title="FOAF" href="foaf.rdf" />
-    <style>
-    </style>
-    <script src=""></script>
+</head>
 
-    <body>
-        <div>
-            <h1>Page Title</h1>
-            <p>Page description</p>
-        </div>
-        
-
-    </body>
+<body>
+    <h1>FOAF</h1>
+    <p>My name is <span data-view:property="foaf:name">Homer Simpson</span>.</p>
+    <p>I live in <span data-view:property="foaf:based_near">Springfield</span>.</p>
+    <p>I work at <span data-view:property="foaf:workplaceHomepage">Springfield Nuclear Power Plant</span>.</p>
+    <p>I have the following friends:</p>
+    <ul data-view:property="foaf:knows">
+        <li data-view:template="friend.xsl">
+            <span data-view:property="foaf:name">Bart Simpson</span>
+        </li>
+        <li data-view:template="friend.xsl">
+            <span data-view:property="foaf:name">Lisa Simpson</span>
+        </li>
+        <li data-view:template="friend.xsl">
+            <span data-view:property="foaf:name">Marge Simpson</span>
+        </li>
+    </ul>
+</body>
 
 </html>
